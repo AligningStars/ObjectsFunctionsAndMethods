@@ -4,12 +4,14 @@ Demonstrates using (calling) FUNCTIONS and using (calling) METHODS:
   -- how they differ.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Cheryl.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
+'''Question: Is there anything special about a 'NEW pen'????????????????????
+'''
 ########################################################################
 #
-# TODO: 2.
+# DONE: 2.
 #   READ this comment, ASKING QUESTIONS as needed to understand it.
 #
 #   For objects that are CONSTRUCTED, we use the DOT notation
@@ -74,7 +76,7 @@ def main():
     # Make the animation go much faster.
     #   First number:  bigger means faster.
     #   Second number: bigger means slower.
-    window.tracer(1, 1)
+    window.tracer(1.9, 1)
 
     jump_and_move_turtle(100, 50, 200, -100)
     turtle = rg.SimpleTurtle('square')
@@ -82,11 +84,14 @@ def main():
     turtle3()
 
     # When the TODOs ask you to test YOUR code, put YOUR tests here:
-
-
+    try_methods()
+    try_functions()
+    try_methods_and_functions()
+    
     window.close_on_mouse_click()
 
 
+jumper = rg.SimpleTurtle()
 def jump_and_move_turtle(x1, y1, x2, y2):
     """
     Constructs a thick, slow, magenta SimpleTurtle.
@@ -100,7 +105,6 @@ def jump_and_move_turtle(x1, y1, x2, y2):
     #
     # Instead, ** CALL ** this function as needed in the other problems.
     # ------------------------------------------------------------------
-    jumper = rg.SimpleTurtle()
     jumper.pen = rg.Pen('magenta', 20)
     jumper.speed = 1
 
@@ -140,6 +144,7 @@ def draw_many_squares(my_turtle, number_of_squares, size, twist):
         my_turtle.left(twist)
 
 
+maja = rg.SimpleTurtle()
 def turtle3():
     """
     Constructs a classic SimpleTurtle and asks it to draw a
@@ -149,7 +154,6 @@ def turtle3():
     # Students:
     #   Do NOT touch this function - it has no TO DO in it.
     # ------------------------------------------------------------------
-    maja = rg.SimpleTurtle()
     maja.pen = rg.Pen('green', 10)
     maja.paint_bucket = rg.PaintBucket('black')
 
@@ -161,7 +165,15 @@ def turtle3():
     maja.end_fill()
 
 
+trymethod = rg.SimpleTurtle()
 def try_methods():
+    trymethod.pen = rg.Pen('brown', 5)
+
+    trymethod.forward(150)
+    trymethod.left(90)
+    trymethod.forward(50)
+    trymethod.backward(100)
+
     """
     Constructs a SimpleTurtle and sets its   pen   to a new rg.Pen
     that is 'brown' with thickness 5.
@@ -172,13 +184,28 @@ def try_methods():
       -- backward  100 units
     """
     ####################################################################
-    # TODO: 3. Implement this function, per its doc-string above.
+    # DONE: 3. Implement this function, per its doc-string above.
     #    Put a statement in   main   to test this function
     #    (by calling this function).
     ####################################################################
 
 
 def try_functions():
+    jumper.pen_up()
+    jumper.go_to(rg.Point(200, 100))
+    jumper.pen_down()
+    jumper.go_to(rg.Point(300, 30))
+
+    maja.pen_up()
+    maja.go_to(rg.Point(100, 200))
+    maja.pen_down()
+    maja.go_to(rg.Point(0, 0))
+
+    trymethod.pen_up()
+    trymethod.go_to(rg.Point(-50, 50))
+    trymethod.pen_down()
+    trymethod.go_to(rg.Point(100, 100))
+
     """
     Causes several SimpleTurtles to do the following:
      -- One jumps to (200, 100), then moves (while drawing) to (300, 30)
@@ -186,7 +213,7 @@ def try_functions():
      -- One jumps to (-50, 50), then moves (while drawing) to (100, 100)
     """
     ####################################################################
-    # TODO: 4. Implement this function, per its doc-string above.
+    # DONE: 4. Implement this function, per its doc-string above.
     #    Put a statement in   main   to test this function
     #    (by calling this function).  IMPORTANT, IMPORTANT, IMPORTANT:
     #    Keep reading the rest of this TO DO before doing the above!
@@ -200,6 +227,32 @@ def try_functions():
 
 
 def try_methods_and_functions():
+    coffee = rg.SimpleTurtle()
+    coffee.pen = rg.Pen('blue', 5)
+
+    coffee.backward(150)
+    coffee.speed = 1
+    for k in range(2):
+        coffee.left(30)
+        coffee.draw_square(100)
+
+    coffee.speed = 5
+    coffee.pen = rg.Pen('red', 5)
+    for k in range(10):
+        coffee.right(15)
+        coffee.draw_square(50)
+
+    coffee.speed = 100
+    coffee.pen = rg.Pen('red', 35)
+    for k in range(8):
+        coffee.left(60)
+        coffee.draw_square(300)
+
+    coffee.pen = rg.Pen('black', 3)
+    coffee.backward(200)
+    coffee.draw_circle(30)
+    coffee.draw_square(50)
+
     """
     Constructs a SimpleTurtle and sets its   pen  to a new rg.Pen
     that is 'blue' with thickness 5.
@@ -232,7 +285,7 @@ def try_methods_and_functions():
       8. Draw a SQUARE whose sides are each of length 50.
     """
     ####################################################################
-    # TODO: 5. Implement this function, per its doc-string above.
+    # DONE: 5. Implement this function, per its doc-string above.
     #    Put a statement in   main   to test this function
     #    (by calling this function).  IMPORTANT, IMPORTANT, IMPORTANT:
     #    Keep reading the rest of this TO DO before doing the above!
