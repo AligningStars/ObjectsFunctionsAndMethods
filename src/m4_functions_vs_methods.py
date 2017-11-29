@@ -85,7 +85,7 @@ def main():
 
     # When the TODOs ask you to test YOUR code, put YOUR tests here:
     try_methods()
-    try_functions(200, 100, 300, 30, 100, 200, 0, 0, -50, 50, 100, 100)
+    try_functions()
     try_methods_and_functions()
     
     window.close_on_mouse_click()
@@ -196,21 +196,10 @@ def try_methods():
     ####################################################################
 
 
-def try_functions(j1, j2, j3, j4, m1, m2, m3, m4, t1, t2, t3, t4):
-    jumper.pen_up()
-    jumper.go_to(rg.Point(j1, j2))
-    jumper.pen_down()
-    jumper.go_to(rg.Point(j3, j4))
-
-    maja.pen_up()
-    maja.go_to(rg.Point(m1, m2))
-    maja.pen_down()
-    maja.go_to(rg.Point(m3, m4))
-
-    trymethod.pen_up()
-    trymethod.go_to(rg.Point(t1, t2))
-    trymethod.pen_down()
-    trymethod.go_to(rg.Point(t3, t4))
+def try_functions():
+    jump_and_move_turtle(200, 100, 300, 30)
+    jump_and_move_turtle(100, 200, 0, 0)
+    jump_and_move_turtle(-50, 50, 100, 100)
 
     """
     Causes several SimpleTurtles to do the following:
