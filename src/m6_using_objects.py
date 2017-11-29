@@ -5,8 +5,8 @@ This module lets you practice  ** using objects **, including:
   -- accessing their DATA via INSTANCE VARIABLES
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Cheryl.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -15,8 +15,31 @@ def main():
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
 
+    two_circles()
+    circle_and_rectangle()
+    lines()
+
 
 def two_circles():
+    width = 800
+    height = 900
+    window = rg.RoseWindow(width, height)
+
+    center = rg.Point(300, 300)
+    radius = 100
+    daisy = rg.Circle(center, radius)
+    daisy.fill_color = 'azure'
+    daisy.attach_to(window)
+
+    lazy_center = rg.Point(500, 600)
+    lazy_radius = 160
+    lazy = rg.Circle(lazy_center, lazy_radius)
+    lazy.fill_color = 'lavender'
+    lazy.attach_to(window)
+
+    window.render()
+
+    window.close_on_mouse_click()
     """
     -- Constructs an rg.RoseWindow.
     -- Constructs and draws two rg.Circle objects on the window
@@ -27,7 +50,7 @@ def two_circles():
     -- Waits for the user to press the mouse, then closes the window.
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this function, per its doc-string above.
+    # DONE: 2. Implement this function, per its doc-string above.
     #    -- ANY two rg.Circle objects that meet the criteria are fine.
     #    -- File  COLORS.txt  lists all legal color-names.
     # Put a statement in   main   to test this function
@@ -36,6 +59,33 @@ def two_circles():
 
 
 def circle_and_rectangle():
+    width = 800
+    height = 500
+    window = rg.RoseWindow(width, height)
+
+    center = rg.Point(200, 200)
+    radius = 80
+
+    circle = rg.Circle(center, radius)
+    thickness = circle.outline_thickness
+    color = circle.fill_color = 'DarkSeaGreen'
+    circle.attach_to(window)
+    print(thickness, '\n', color, '\n', center, '\n', center.x, '\n',
+          center.y, '\n')
+
+    corner1 = rg.Point(500, 100)
+    corner2 = rg.Point(700, 300)
+    rectangle = rg.Rectangle(corner1, corner2)
+    center = rectangle.get_center()
+    thickness = rectangle.outline_thickness
+    fill_color = rectangle.fill_color = 'DarkKhaki'
+    rectangle.attach_to(window)
+    print(thickness, '\n', fill_color, '\n', center, '\n', center.x, '\n',
+          center.y, '\n')
+
+    window.render()
+
+    window.close_on_mouse_click()
     """
     -- Constructs an rg.RoseWindow.
     -- Constructs and draws a rg.Circle and rg.Rectangle
@@ -67,7 +117,7 @@ def circle_and_rectangle():
            150.0
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement this function, per its doc-string above.
+    # DONE: 3. Implement this function, per its doc-string above.
     #   -- ANY objects that meet the criteria are fine.
     # Put a statement in   main   to test this function
     #    (by calling this function).
@@ -78,6 +128,28 @@ def circle_and_rectangle():
 
 
 def lines():
+    width = 700
+    height = 500
+    window = rg.RoseWindow(width, height)
+
+    start = rg.Point(100, 100)
+    end = rg.Point(200, 200)
+    line = rg.Line(start, end)
+    line.attach_to(window)
+
+    left = rg.Point(300, 300)
+    right = rg.Point(400, 100)
+    thread = rg.Line(right, left)
+    thread.attach_to(window)
+    thread.thickness = 4
+    thread.color = 'DarkSalmon'
+    point = thread.get_midpoint()
+    print(point, '\n', point.x, '\n', point.y)
+
+    window.render()
+
+    window.close_on_mouse_click()
+
     """
     -- Constructs a rg.RoseWindow.
     -- Constructs and draws on the window two rg.Lines such that:
@@ -100,7 +172,7 @@ def lines():
     -- Waits for the user to press the mouse, then closes the window.
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     # ------------------------------------------------------------------
 
 
@@ -108,3 +180,4 @@ def lines():
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
 main()
+
