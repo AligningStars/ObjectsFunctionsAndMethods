@@ -76,7 +76,7 @@ def main():
     # Make the animation go much faster.
     #   First number:  bigger means faster.
     #   Second number: bigger means slower.
-    window.tracer(1.9, 1)
+    window.tracer(2, 1)
 
     jump_and_move_turtle(100, 50, 200, -100)
     turtle = rg.SimpleTurtle('square')
@@ -85,13 +85,15 @@ def main():
 
     # When the TODOs ask you to test YOUR code, put YOUR tests here:
     try_methods()
-    try_functions()
+    try_functions(200, 100, 300, 30, 100, 200, 0, 0, -50, 50, 100, 100)
     try_methods_and_functions()
     
     window.close_on_mouse_click()
 
 
 jumper = rg.SimpleTurtle()
+
+
 def jump_and_move_turtle(x1, y1, x2, y2):
     """
     Constructs a thick, slow, magenta SimpleTurtle.
@@ -145,6 +147,8 @@ def draw_many_squares(my_turtle, number_of_squares, size, twist):
 
 
 maja = rg.SimpleTurtle()
+
+
 def turtle3():
     """
     Constructs a classic SimpleTurtle and asks it to draw a
@@ -166,6 +170,8 @@ def turtle3():
 
 
 trymethod = rg.SimpleTurtle()
+
+
 def try_methods():
     trymethod.pen = rg.Pen('brown', 5)
 
@@ -190,21 +196,21 @@ def try_methods():
     ####################################################################
 
 
-def try_functions():
+def try_functions(j1, j2, j3, j4, m1, m2, m3, m4, t1, t2, t3, t4):
     jumper.pen_up()
-    jumper.go_to(rg.Point(200, 100))
+    jumper.go_to(rg.Point(j1, j2))
     jumper.pen_down()
-    jumper.go_to(rg.Point(300, 30))
+    jumper.go_to(rg.Point(j3, j4))
 
     maja.pen_up()
-    maja.go_to(rg.Point(100, 200))
+    maja.go_to(rg.Point(m1, m2))
     maja.pen_down()
-    maja.go_to(rg.Point(0, 0))
+    maja.go_to(rg.Point(m3, m4))
 
     trymethod.pen_up()
-    trymethod.go_to(rg.Point(-50, 50))
+    trymethod.go_to(rg.Point(t1, t2))
     trymethod.pen_down()
-    trymethod.go_to(rg.Point(100, 100))
+    trymethod.go_to(rg.Point(t3, t4))
 
     """
     Causes several SimpleTurtles to do the following:
