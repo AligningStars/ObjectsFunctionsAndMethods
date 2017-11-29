@@ -106,7 +106,7 @@ def turtle3():
 
 def turtle4():
     Sun = rg.SimpleTurtle()
-    Sun.pen = rg.Pen(azure3,27)
+    Sun.pen = rg.Pen('azure3',27)
 
     Sun.forward(200)
     Sun.begin_fill()
@@ -128,6 +128,8 @@ def turtle5():
 
     Dusk.right(90)
     Dusk.forward(278)
+
+
 ########################################################################
 #
 # DONE: 2.
