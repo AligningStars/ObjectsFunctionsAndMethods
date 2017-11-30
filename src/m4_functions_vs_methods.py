@@ -223,7 +223,7 @@ def try_functions():
 
 def try_methods_and_functions():
     coffee = rg.SimpleTurtle()
-    coffee.pen = rg.Pen('blue', 5)
+    coffee.pen = rg.Pen('gray', 5)
 
     coffee.backward(150)
     coffee.speed = 1
